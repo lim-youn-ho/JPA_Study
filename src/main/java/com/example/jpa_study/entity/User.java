@@ -23,11 +23,16 @@ public class User extends BaseTimeEntity {
         @Column(name = "user_age", nullable = false)
         private int age;
 
+        @Column(name = "user_password", nullable = false)
+        private String password;
+
         
         @Builder //빌더 패턴
-        public User(String name, Integer age){
+        public User(String name, Integer age,String password){
             this.name = name;
             this.age = age;
+            this.password = password;
         }
+
 
 }
