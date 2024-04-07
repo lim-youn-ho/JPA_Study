@@ -25,11 +25,11 @@ public class BaseController {
     @PutMapping("/users/{id}")
     public void update(@PathVariable Long id, @RequestBody User requestUser) {
         User user = userRepository.findById(id).orElseThrow(() -> {
-            // IllegalArgumentException 예외 처리
+
             throw new IllegalArgumentException("해당하는 아이디가 없습니다 id : " + id);
         });
 
-       // user.setPassword(requestUser.getPassword());
+
 
         userRepository.save(user);
     }
