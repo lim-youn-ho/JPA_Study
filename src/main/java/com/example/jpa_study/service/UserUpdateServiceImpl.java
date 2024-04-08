@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserUpdateServiceImpl implements UserUpdateService{
     private final UserRepository userRepository;
+    //dtoToEntity 는 UserUpdateService 에서 상속
+    //controller에서 UserUpdateService.register 사용
     @Override
     public Long register(UserDTO dto){
         User entity = dtoToEntity(dto);
