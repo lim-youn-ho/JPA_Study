@@ -8,6 +8,8 @@ import com.example.jpa_study.entity.User;
 public interface HouseUpdateService {
     Long registerHouse(HouseDTO dto);
 
+    Long deleteHouse(HouseDTO dto);
+
 
     default House dtoToHouseEntity(HouseDTO dto){
         House houseEntity = House.builder()

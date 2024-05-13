@@ -22,4 +22,12 @@ public class HouseUpdateServiceImpl implements HouseUpdateService {
         houseRepository.save(houseEntity);
         return houseEntity.getId();
     }
+
+    @Override
+    public Long deleteHouse(HouseDTO dto){
+        House houseEntity = dtoToHouseEntity(dto);
+
+        houseRepository.delete(houseEntity);
+        return houseEntity.getId();
+    }
 }

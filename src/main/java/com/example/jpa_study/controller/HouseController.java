@@ -25,6 +25,7 @@ public class HouseController {
 
     }
 
+
     @PutMapping("/house/{id}")
     public void houseUpdate(@PathVariable Long id, @RequestBody House requestHouse) {
         House house = houseRepository.findById(id).orElseThrow(() -> {
@@ -32,6 +33,12 @@ public class HouseController {
         });
 
         houseRepository.save(requestHouse);
+    }
+
+    @PostMapping("/house/houseDelete")
+    public void houseDelete(@RequestBody HouseDTO house) {
+        houseService.deleteHouse(house);
+
     }
 
 
